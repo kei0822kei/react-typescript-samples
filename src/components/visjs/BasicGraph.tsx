@@ -2,9 +2,10 @@ import { useEffect, useRef } from "react";
 import { Network } from "vis-network";
 import type { Network as NetworkType, Node, Edge, Options } from "vis-network";
 
-let network: NetworkType;
-
 const BasicGraph = () => {
+
+  let network: NetworkType;
+
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
