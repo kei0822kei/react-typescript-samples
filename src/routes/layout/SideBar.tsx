@@ -14,6 +14,7 @@ const drawerBodyColor = "#ffffff"
 const drawerBackgroundColor = "#10736e"
 const ContentsList = [
   { text: "visjs", path: "/visjs" },
+  { text: "markmap", path: "/markmap" },
 ]
 
 interface SideBarProps {
