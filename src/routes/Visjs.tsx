@@ -1,12 +1,11 @@
+import { Box } from "@mui/material";
 import { useEffect, useRef } from "react";
 import { Network } from "vis-network";
-import type { Node, Edge, Options } from "vis-network"
+import type { Network as NetworkType, Node, Edge, Options } from "vis-network";
 
-let network: any;
+let network: NetworkType;
 
-/** Network図 の Component */
 const NetworkGraph = () => {
-  /** DOMを参照できるように useRef を使用して Element を取得する */
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -18,7 +17,6 @@ const NetworkGraph = () => {
       { from: 1, to: 3 }
     ]
     const options: Options = {
-      /** physics オプションは、グラフの物理的シミュレーションに関する設定を指定します。*/
       physics: {
         barnesHut: {
           gravitationalConstant: -4000,
@@ -59,10 +57,16 @@ const NetworkGraph = () => {
   }, []);
 
   return (
-    <div>
-      {/* Network図 を表示する領域 */}
-      <div style={{ height: 800, width: "100%" }} ref={ref} />
-    </div>
+    <Box
+      sx={{
+        width: "100%",
+        height: 800,
+        backgroundColor: '#f5ebf7',
+        boxShadow: 2,
+      }}
+    >
+      <div style={{ height: "100%", width: "100%" }} ref={ref} />
+    </Box>
   );
 };
 
